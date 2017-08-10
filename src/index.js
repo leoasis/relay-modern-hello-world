@@ -1,9 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import AppRelay from './Relay/App';
+import AppApollo from './Apollo/App';
 import './index.css';
 
 ReactDOM.render(
-  <App />,
+  <div>
+    <AppRelay />
+    <AppApollo />
+  </div>,
   document.getElementById('root')
 );

@@ -12,13 +12,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h2>Tiny GitHunt</h2>
+        <h2>Tiny GitHunt (Relay)</h2>
         <QueryRenderer
           environment={environment}
 
           query={graphql`
             query AppFeedQuery {
-              feed (type: NEW, limit: 5) {
+              feed (type: TOP, limit: 5) {
                 ...Feed
               }
             }
@@ -28,7 +28,6 @@ class App extends Component {
             if (error) {
               return <div>{error.message}</div>;
             } else if (props) {
-              console.log(props.feed);
               return <Feed data={props.feed} />;
             }
             return <div>Loading</div>;
